@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  php:
+    image: mbezhanov/s3-guard:1.0.0
+  nginx:
+    image: nginx:1.15.2-alpine
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - '80:80'
